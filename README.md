@@ -8,14 +8,15 @@ You can directly download the ernie model [nghuyong2019](https://github.com/nghu
 Firstly, please intall all the package we needed in this task
 ```pip install -r requirements.txt```
 
-### Contrastive Self-supervised Learning(CSSL) Pretraining
 
-#### Data Augmentation
+## Contrastive Self-supervised Learning(CSSL) Pretraining
+
+### Data Augmentation
 If the language in your task dataset is English, for each input sentence x in the target task, you could augment it by first using an English-to-German machine translation model to translate x to y, and then using a German-to-English translation model to translate y to x'. The x' is regarded as an augmented sentence of x. Similarly, you could use an English-to-Chinese machine translation model and a Chinese-to-English machine translation model to obtain another augmented sentence x“.
 
 Then, you could save your augmented data into `augmented_data` folder.
 
-#### MoCo Task
+### MoCo Task
 We use Momentum Contrast([MoCo](https://arxiv.org/abs/1911.05722)) to implement CSSL. The steps are as follows.
 
 * Build a new folder called `moco_model` to store your pretrained model with
