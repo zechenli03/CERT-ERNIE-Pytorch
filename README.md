@@ -16,12 +16,25 @@ If the language in your task dataset is English, for each input sentence x in th
 Then, you could save your augmented data into `augmented_data` folder.
 
 #### MoCo Task
-We use Momentum Contrast([MoCo](https://arxiv.org/abs/1911.05722)) to implement CSSL.
+We use Momentum Contrast([MoCo](https://arxiv.org/abs/1911.05722)) to implement CSSL. The steps are as follows.
 
 * Build a new folder called `moco_model` to store your pretrained model with
 ```mkdir moco_model```
 * You need to change the number of negtive samples in [line 86 of `MOCO.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L88).   
-**Notice:              The amount of Augmentated data(negtive samples) must be an integer multiple of [batch_size](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L44)**
+**Notice:              The amount of Augmentated data(negtive samples) must be an integer multiple of [`batch_size`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L44)**
+* Set your own parameters and run [`MOCO.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py) to implement pretraining process.
+```python
+python MOCO.py \
+  --lr 0.0001 \
+  --batch-size 32 \
+  --dist-url 'tcp://localhost:10001' \
+  --multiprocessing-distributed \
+  --world-size 1 \
+  --rank 0 
+```
+* After training, you can extract encoder_q from the whole model with `python trans.py`
+
+
 
 
 
