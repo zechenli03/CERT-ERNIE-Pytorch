@@ -17,9 +17,9 @@ path_to_biobert = 'nghuyong/ernie-2.0-large-en'
 usemoco = True
 if usemoco:
     config = AutoConfig.from_pretrained(
-            path_to_biobert
+            path_to_biobert,
             num_labels=1024,
-        )
+    )
 
     model = AutoModelForSequenceClassification.from_pretrained(
         path_to_biobert,
