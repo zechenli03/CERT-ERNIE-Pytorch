@@ -3,7 +3,7 @@
 This repository contains code for [Hugging Face implementation of BERT](https://github.com/huggingface/transformers) and uses [huggingface's](https://github.com/huggingface/pytorch-transformers) format [ERNIE](https://github.com/PaddlePaddle/ERNIE) converted by [nghuyong2019](https://github.com/nghuyong/ERNIE-Pytorch).
 
 ## Getting Started
-You can directly download the ernie model [nghuyong2019](https://github.com/nghuyong/ERNIE-Pytorch) have converted **or** directly load by huggingface's transformers  **or**  convert it with the [nghuyong2019's](https://github.com/nghuyong/ERNIE-Pytorch) code.
+You can directly download the ernie model [nghuyong2019](https://github.com/nghuyong/ERNIE-Pytorch) have converted **or** directly load by huggingface's transformers  **or**  convert it with [nghuyong2019's](https://github.com/nghuyong/ERNIE-Pytorch) code.
 
 Firstly, please intall all the package we needed in this task
 ```pip install -r requirements.txt```
