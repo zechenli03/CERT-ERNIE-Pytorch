@@ -22,4 +22,4 @@ python run_glue.py \
     --logging_steps 39 \
     --eval_steps 39 \
     --seed 199733 \
-    --output_dir $OUTPUT_DIR/$TASK_NAME/4
+    --output_dir $OUTPUT_DIR/$TASK_NAME
