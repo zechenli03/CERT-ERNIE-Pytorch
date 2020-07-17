@@ -21,10 +21,9 @@ Then, you could save your augmented data into `augmented_data` folder.
 ### MoCo Task
 We use Momentum Contrast([MoCo](https://arxiv.org/abs/1911.05722)) to implement CSSL. The steps are as follows.
 
-* Build a new folder called `moco_model` to store your pretrained model with
-```mkdir moco_model```
+* Build a new folder called `moco_model` to store your pretrained model with    ```mkdir moco_model```
 * You need to change the number of negtive samples in [line 86 of `MOCO.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L88).   
-**Notice:              The amount of Augmentated data(negtive samples) must be an integer multiple of [`batch_size`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L44)**
+**Notice: The amount of Augmentated data(negtive samples) must be an integer multiple of [`batch_size`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L44)**
 * Set your own parameters and run [`MOCO.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py) to implement pretraining process.
 ```python
 python MOCO.py \
@@ -35,8 +34,7 @@ python MOCO.py \
   --world-size 1 \
   --rank 0 
 ```
-* After training, you can extract encoder_q from the whole model with
-```python trans.py```
+* After training, you can extract encoder_q from the whole model with     ```python trans.py```
 
 
 
