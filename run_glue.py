@@ -52,7 +52,11 @@ class ModelArguments:
         default=None, metadata={
             "help": "an optional state dictionnary (collections.OrderedDict object) to use instead of Google pre-trained models"}
     )
-
+    do_lower_case: str = field(
+        default=True, metadata={
+            "help":  "Set this flag if you are using an uncased model."
+      }
+    )
 
 def main():
     # See all possible arguments in src/transformers/training_args.py
@@ -118,6 +122,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
         cache_dir=model_args.cache_dir,
+        do_lower_case=model_args.do_lower_case,
     )
 
     if model_args.state_dict is not None:
