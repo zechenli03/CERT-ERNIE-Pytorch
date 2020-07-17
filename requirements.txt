@@ -1,3 +1,4 @@
+transformers
 tensorboard
 scikit-learn
 seqeval
@@ -13,3 +14,4 @@ streamlit
 elasticsearch
 pandas
 nlp
+torch
