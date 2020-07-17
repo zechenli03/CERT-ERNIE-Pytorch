@@ -43,6 +43,7 @@ python trans.py
 ```
 
 
+__P.S. If you want to use a different encoder other than ERNIE 2.0, you could change the encoder name or path in [line26 ~ line 38 of `builder.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/moco/builder.py#L26-L38), [line21 of `MOCO.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/MOCO.py#L221) and [line16 of `trans.py`](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/trans.py#L16) with any model [huggingface's](https://github.com/huggingface/pytorch-transformers) provided or fits the [huggingface's](https://github.com/huggingface/pytorch-transformers) format.__
 
 
 
