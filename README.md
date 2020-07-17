@@ -142,7 +142,7 @@ where task name can be one of CoLA, SST-2, MRPC, STS-B, QQP, MNLI, QNLI, RTE, WN
 
 The dev set results will be present within the text file 'eval_results.txt' in the specified output_dir. In case of MNLI, since there are two separate dev sets, matched and mismatched, there will be a separate output folder called '/tmp/MNLI-MM/' in addition to '/tmp/MNLI/'.
 
-You can take [```run_glue.oy```](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/run_glue.py) as an example.
+You can take [```run_cert_rte.sh```](https://github.com/Ryanro/CERT-ERNIE-Pytorch/blob/master/run_cert_rte.sh) as an example.
 
 
 
