@@ -11,16 +11,19 @@ from torch.utils.data import TensorDataset, random_split, DataLoader, RandomSamp
 from sklearn.metrics import roc_auc_score
 import argparse
 import csv
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import AutoConfig, AutoModelForSequenceClassification
 
 path_to_biobert = 'nghuyong/ernie-2.0-large-en'
 usemoco = True
 if usemoco:
-    model = BertForSequenceClassification.from_pretrained(
+    config = AutoConfig.from_pretrained(
+            path_to_biobert,
+            num_labels=1024,
+    )
+
+    model = AutoModelForSequenceClassification.from_pretrained(
         path_to_biobert,
-        num_labels=1024,
-        output_attentions=False,  # Whether the model returns attention
-	      output_hidden_states=False,
+        config=config,
     )
 
     checkpoint = torch.load('./moco_model/moco.tar')
