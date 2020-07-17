@@ -37,7 +37,7 @@ python MOCO.py \
 ```
 * After training, you can extract encoder_q from the whole model with
 
-`python trans.py`
+        `python trans.py`
 
 
 
